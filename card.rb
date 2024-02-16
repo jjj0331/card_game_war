@@ -29,7 +29,7 @@ class Card
     def Draw(numbers)
       for num in 1..numbers do
         #乱数を発生させる
-        random=rand(Range.new(0, @cards.length))
+        random=rand(Range.new(0, @cards.length-1))
         #playercardsにカードを格納
         @playercards.push(@cards[random])  
         #@cardsからプレイヤーに渡されたカードを引く
@@ -40,8 +40,4 @@ class Card
 end
 
 
-trump=Card.new
 
-trump.Draw(2)
-p trump.playercards
-p trump.cards.length
