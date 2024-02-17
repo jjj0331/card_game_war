@@ -53,13 +53,14 @@ end
 
 
 puts "********************************************************"
-puts "         【カードの枚数を確認】                "
+puts "【カードの枚数を確認】"
+puts "--------------------------------------------------------"
 players.each do |player|
   puts "ユーザの名前は:#{player.name}"
   puts "#{player.name}の手持ちの枚数は#{player.havingcards.length}です"   
 end
 puts "********************************************************"
-
+puts
 
 i=1
 while players.all? { |player| player.havingcards.length != 0 }
