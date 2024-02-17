@@ -1,10 +1,9 @@
 #card
 
-#=====================================================================
 class Card
   attr_reader :cards,:playercards
 
-  #===================================================================== 
+   
   def initialize 
     #トランプの各カードを配列
     @cards=[]
@@ -19,24 +18,31 @@ class Card
         @cards.push(mark+number)
       end
     end
-    
+    @cards.push("joker")
     #プレイヤーが持っているカードも初期化
     @playercards=[]
   end
-  #=====================================================================
 
-    #===================================================================== 
-    def Draw(numbers)
-      for num in 1..numbers do
-        #乱数を発生させる
-        random=rand(Range.new(0, @cards.length-1))
-        #playercardsにカードを格納
-        @playercards.push(@cards[random])  
-        #@cardsからプレイヤーに渡されたカードを引く
-        @cards.delete_at(random)     
-      end  
-    end
-    #=====================================================================
+  def cardPoints(num=1)
+    if num=="joker"
+      99
+    elsif num=="♠1"
+      98
+    else       
+      case num[1..-1]
+      when 1
+        13
+      when 13
+        12
+      when 12
+        11
+      when 11
+        10
+      else
+        num[1..-1].to_i
+      end
+    end      
+  end  
 end
 
 
