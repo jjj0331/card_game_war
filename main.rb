@@ -51,20 +51,20 @@ while trump.cards.length!=0
   end
 end
 
-#カードの枚数を確認
+
+puts "********************************************************"
+puts "         【カードの枚数を確認】                "
 players.each do |player|
   puts "ユーザの名前は:#{player.name}"
   puts "#{player.name}の手持ちの枚数は#{player.havingcards.length}です"   
-  puts
 end
+puts "********************************************************"
 
 
 i=1
 while players.all? { |player| player.havingcards.length != 0 }
 puts "********************************************************"
 puts "【戦争開始#{i}回線目:各プレイヤーはカードを1枚提出】                "
-puts "********************************************************"
-
 
 outputs_cards={}
 outputs=[]
